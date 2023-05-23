@@ -1,6 +1,9 @@
 import React from "react"
+import { useState } from "react"
+import { getInputValue } from "./Header.js"
 
 const BodyContent = () => {
+
   return (
     <div className="body-container">
       <div className="exercise-items">1</div>
