@@ -1,6 +1,4 @@
 import React from "react"
-import { getExerciseData } from "./Api.js"
-import { inputValue} from "./Header.js"
 
 const BodyContent = (props) => {
 

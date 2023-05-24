@@ -1,21 +1,9 @@
 import React from 'react'
+import { useState } from 'react'
 
 import BodyContent from "./BodyContent"
 
-const getInputValue = () => {
-  if (document.querySelector('.header-input').value !== "" ) {
-    console.log(document.querySelector('.header-input').value)
 
-    inputValue.value = document.querySelector('.header-input').value
-
-    document.querySelector('.body-container').style.display = 'flex'
-    document.querySelector('.header-input').value == " "
-    return console.log(document.querySelector('.header-input').value)
-  } else {
-    alert("Must type in a value!")
-    return false
-  }
-}
 
 async function getExerciseData(muscle) {
   let data = await fetch(`https://api.api-ninjas.com/v1/exercises?muscle=${muscle}`, {
@@ -26,7 +14,6 @@ async function getExerciseData(muscle) {
   })
 
   let parsedData = await data.json()
-  console.log(parsedData)
   return parsedData
 }
 
@@ -36,6 +23,24 @@ const inputValue = {
 
 
 const Header = () => {
+
+  const getInputValue = () => {
+    if (document.querySelector('.header-input').value !== "" ) {
+      console.log(document.querySelector('.header-input').value)
+      setLogic(true)
+  
+      inputValue.value = document.querySelector('.header-input').value
+  
+      document.querySelector('.body-container').style.display = 'flex'
+      document.querySelector('.header-input').value == " "
+      return true
+    } else {
+      alert("Must type in a value!")
+      return false
+    }
+  }
+
+  const [logic, setLogic] = useState(false)
 
   return (
     <>
@@ -50,7 +55,7 @@ const Header = () => {
         </div>
         
       </div>
-      <BodyContent data={getExerciseData(inputValue.value)} />
+      <BodyContent data={getExerciseData(inputValue.value)}/>
     </>
   )
 }
