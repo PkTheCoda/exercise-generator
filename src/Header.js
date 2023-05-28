@@ -14,6 +14,13 @@ const inputValue = {
 const Header = () => {
 
   const [content, setContent] = useState(["hello1", "hello2"])
+  const [inputVal, setInputVal] = useState("nothin")
+
+  function handleInputVal(event) {
+    const typedVal = event.target.value
+    setInputVal(typedVal)
+    console.log('Typed value:', typedVal);
+  }
 
   async function getExerciseData() {
     let data = await fetch(`https://api.api-ninjas.com/v1/exercises?muscle=biceps`, {
@@ -29,19 +36,22 @@ const Header = () => {
     return parsedData
   }
 
+
   return (
+
     <>
       <div className="header-container">
 
         <div className="header-title">Exercise Finder</div>
         <div className="input-items">
-          <input type="text" className="header-input" placeholder="Muscle Group"/>
+          <input type="text" className="header-input" placeholder="Muscle Group" onChange={handleInputVal}/>
           <button className="submit-button"onClick={getExerciseData}>Search</button>
         </div>
         
       </div>
       <BodyContent dataContent={content}/>
     </>
+
   )
 }
 
