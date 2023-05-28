@@ -4,12 +4,18 @@ const BodyContent = (props) => {
 
   return (
     <>
-      <h1>{props.dataContent}</h1>
 
       <div className="body-container">        
-        <div className="exercise-items">1</div>
-        <div className="exercise-items">2</div>
-        <div className="exercise-items">3</div>
+        <div className="exercise-items">
+
+          <h1 className="exerciseName">{props.name}</h1>
+          <h2 className="exerciseType">Type: {props.type}</h2>
+          <h2 className="muscle">Targetted Muscle: {props.muscle}</h2>
+          <h2 className="exerciseEquipment">Required Equipment: {props.equipment}</h2>
+          <h2 className="exerciseDifficulty">Difficulty: {props.difficulty} </h2>
+          <p className="exerciseInstructions"><b>Instructions:</b> {props.instructions}</p>
+
+        </div>
       </div>
       
     </>
