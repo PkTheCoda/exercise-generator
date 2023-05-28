@@ -4,13 +4,6 @@ import { useState } from 'react'
 import BodyContent from "./BodyContent"
 
 
-
-
-const inputValue = {
-  value: ""
-}
-
-
 const Header = () => {
 
   const [content, setContent] = useState(["hello1", "hello2"])
@@ -22,8 +15,8 @@ const Header = () => {
     console.log('Typed value:', typedVal);
   }
 
-  async function getExerciseData() {
-    let data = await fetch(`https://api.api-ninjas.com/v1/exercises?muscle=biceps`, {
+  async function getExerciseData(muscle) {
+    let data = await fetch(`https://api.api-ninjas.com/v1/exercises?muscle=${muscle}`, {
       mode: 'cors',
       headers: {
         'X-Api-Key' : 'vSGrwJSUO8EvcZGf83/nYw==LtW4CWrBc0VOsk1' // put a 3 at the end
@@ -45,7 +38,7 @@ const Header = () => {
         <div className="header-title">Exercise Finder</div>
         <div className="input-items">
           <input type="text" className="header-input" placeholder="Muscle Group" onChange={handleInputVal}/>
-          <button className="submit-button"onClick={getExerciseData}>Search</button>
+          <button className="submit-button"onClick={() => getExerciseData(inputVal)}>Search</button>
         </div>
         
       </div>
