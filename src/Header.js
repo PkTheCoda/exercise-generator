@@ -6,7 +6,7 @@ import BodyContent from "./BodyContent"
 const Header = () => {
 
 
-  const [content, setContent] = useState(["hello1", "hello2", "hello3", "hello4", "hello5"])
+  const [content, setContent] = useState(["empty"])
   const [inputVal, setInputVal] = useState("nothin")
 
   function handleInputVal(event) {
@@ -43,6 +43,10 @@ const Header = () => {
         </div>
         
       </div>
+
+      {content[0] === "empty" && 
+        <h1 className="loading--h1">Type in a VALID muscle group to see something cool 😎</h1>
+      }
 
       <div className="main--holder">
         {content.map(piece => 

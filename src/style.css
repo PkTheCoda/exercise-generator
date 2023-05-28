@@ -127,7 +127,11 @@ placeholder {
   font-size: 15px;
   text-align: center;
   margin:10px;
-  border: 2px solid grey;
+  border: 2px solid rgb(236, 231, 231);
   border-radius: 10px;
   padding:5px
+}
+
+.loading--h1 {
+  margin:30px;
 }
