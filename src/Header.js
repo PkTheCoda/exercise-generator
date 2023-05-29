@@ -6,7 +6,7 @@ import BodyContent from "./BodyContent"
 const Header = () => {
 
 
-  const [content, setContent] = useState(["empty"])
+  const [content, setContent] = useState([""])
   const [inputVal, setInputVal] = useState("nothin")
 
   function handleInputVal(event) {
@@ -44,8 +44,12 @@ const Header = () => {
         
       </div>
 
-      {content[0] === "empty" && 
+      {content[0] === "" && 
         <h1 className="loading--h1">Type in a VALID muscle group to see something cool 😎</h1>
+      }
+
+      {content.length == 0 && 
+        <h1 className="loading--h1">Oopsies! Seems like you typed in a muscle group that doesn't exist. Maybe try another one? 🤔</h1>
       }
 
       <div className="main--holder">
