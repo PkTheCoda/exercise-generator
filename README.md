@@ -1,6 +1,8 @@
 # Exercise Generator - Details
 This is a simple exercise generator that was created using API-Ninja's <b>Exercise API</b>. You can enter any sort of muscle group and the script will spit out multiple different exercises with details including:
 
+Live Demo: **[https://react-dp6ej4.stackblitz.io/]**
+
 - Name of the Exercise
 - Type of exercise (Strength, Cardio)
 - Targetted Muscle Group/Groups
