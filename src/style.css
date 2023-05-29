@@ -133,5 +133,7 @@ placeholder {
 }
 
 .loading--h1 {
+  text-align: center;
   margin:30px;
+  width:500px;
 }
